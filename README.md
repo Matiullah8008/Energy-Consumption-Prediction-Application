@@ -3,8 +3,11 @@
 ## Project Overview
 This is a Flask-based web application designed to predict energy consumption levels (Low, Medium, High) for buildings based on various input parameters. It features a user-friendly interface with a dynamic background video and an animated building, providing an engaging user experience.
 
-## overview
-https://matiullah8008.pythonanywhere.com/
+### 🔗 Live Demo
+
+✅ [Click here to check preview](https://matiullah8008.pythonanywhere.com/)  
+Deployed on PythonAnywhere using Flask and a custom-trained machine learning model.
+
 
 ## Features
 - **Energy Consumption Prediction**: Predicts energy consumption based on building type, square footage, occupancy, insulation, appliances, temperature, HVAC efficiency, energy sources, peak usage hours, and annual energy cost.
