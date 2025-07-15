@@ -1,0 +1,145 @@
+body {
+    background-color: #f8f9fa; /* Light background */
+    color: #212529; /* Dark text */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Removed overflow: hidden; to allow scrolling */
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2; /* Video behind everything */
+}
+
+.background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Animation on top of video, behind content */
+    overflow: hidden;
+}
+
+.building {
+    position: absolute;
+    bottom: 0;
+    left: 10%; /* Position on the left side */
+    width: 200px;
+    height: 0;
+    background-color: #666; /* Base color for the building */
+    border: 2px solid #ccc; /* Lighter border */
+    animation: build 10s ease-out forwards;
+    opacity: 0; /* Start invisible */
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+
+    /* New: For simulating floors */
+    background-image: repeating-linear-gradient(
+        to top,
+        #555,
+        #555 95%,
+        #777 95%,
+        #777 100%
+    );
+    background-size: 100% 20px; /* Height of each floor + gap */
+    background-position: 0 100%; /* Start with floors at the bottom */
+}
+
+@keyframes build {
+    0% {
+        height: 0;
+        opacity: 0;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        background-position: 0 100%; /* Floors start at the bottom */
+    }
+    20% {
+        opacity: 0.5;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    100% {
+        height: 80%;
+        opacity: 1;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        background-position: 0 0%; /* Floors move up as building grows */
+    }
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Lighter card background */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+.card-header {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 1.5rem;
+}
+
+.card-header h1 {
+    font-weight: 700;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+.form-control, .form-select {
+    background-color: #e9ecef; /* Light input background */
+    color: #495057;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #dee2e6;
+    color: #495057;
+    border-color: #007bff;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #0056b3, #007bff);
+}
+
+.progress-bar {
+    background: linear-gradient(45deg, #28a745, #218838);
+}
+
+.alert {
+    border-radius: 15px;
+}
+
+.list-group-item {
+    background-color: #ffffff; /* Light background for list items */
+    color: #212529; /* Dark text for list items */
+    border-color: #dee2e6;
+}
+
+.list-group-item i {
+    margin-right: 10px;
+}
